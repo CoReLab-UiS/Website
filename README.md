@@ -4,7 +4,7 @@ Website of CoReLab, the Computational Research Laboratory at the University of S
 
 It's a static site written in plain HTML and CSS and served by GitHub Pages from the `main` branch. There's no build step, so whatever is pushed to `main` goes live.
 
-Live site: https://jonasjaeger-sci.github.io/CoReLab/
+Live site: https://corelab-uis.github.io/Website/
 
 ## Preview locally
 

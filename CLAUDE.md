@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Website for **CoReLab (Computational Research Laboratory)**, a university research group. It's a static site written in plain HTML (with CSS and, if needed, minimal JavaScript), hosted and maintained on GitHub with GitHub Pages.
 
-Live site: https://jonasjaeger-sci.github.io/CoReLab/ (repo `jonasjaeger-sci/CoReLab`, published from the root of `main`). It's a project site, so links must be relative.
+Live site: https://corelab-uis.github.io/Website/ (repo `CoReLab-UiS/Website`, published from the root of `main`). It's a project site, so links must be relative.
 
 ## Structure
 
