@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simulation of battery materials and interfacial kinetics – CoReLab | University of Stavanger</title>
-  <meta name="description" content="[One sentence summarising the research topic.]">
+  <title>Simulation of Sodium-Ion Battery Interface Kinetics – CoReLab | University of Stavanger</title>
+  <meta name="description" content="Reactive molecular dynamics and rare-event sampling of electrode–electrolyte interfaces in sodium-ion batteries, from sodium insertion into black phosphorus to the formation of the solid electrolyte interphase.">
   <link rel="icon" type="image/svg+xml" href="../Logos/corelab_mark.svg">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/main.js" defer></script>
@@ -53,8 +53,8 @@
       <div class="container">
         <a class="back-link" href="../index.html#research">All research topics</a>
         <p class="eyebrow">Research topic 02</p>
-        <h1>Simulation of battery materials and interfacial kinetics</h1>
-        <p class="lead">[One or two sentences summarising the topic: what we study and why it matters.]</p>
+        <h1>Simulation of Sodium-Ion Battery Interface Kinetics</h1>
+        <p class="lead">We use reactive molecular dynamics and rare-event sampling to follow the chemistry at the interface between electrode and electrolyte in sodium-ion batteries: how sodium enters the electrode, and how the protective interphase layer forms.</p>
       </div>
     </section>
 
@@ -63,58 +63,57 @@
       <div class="container topic-layout">
         <article class="prose">
           <figure class="topic-figure">
-            <img src="../Images/research/placeholder.svg" alt="[Short description of the image]" width="640" height="360">
-            <figcaption>[Figure caption: what the image shows.]</figcaption>
+            <img src="../Images/research/EEI.jpg" alt="Simulation snapshot of a layered electrode in contact with a liquid electrolyte, with the interface region outlined by a dashed box." width="1082" height="550">
+            <figcaption>Simulation snapshot of an electrode–electrolyte interface: the layered electrode (left) is in contact with the liquid electrolyte (right). The dashed box marks the interfacial region, where the solid electrolyte interphase forms.</figcaption>
           </figure>
 
           <h2>Background</h2>
-          <p>[The scientific or societal context of the topic. Which open questions or challenges motivate this research?]</p>
+          <p>Sodium-ion batteries are a promising complement to lithium-ion batteries. Sodium is abundant and inexpensive, which lowers cost and supply risks, but sodium-ion batteries still lag behind in energy density and cycling stability.</p>
+          <p>Black phosphorus is a promising anode material: it can store a large amount of sodium and conducts well, but it expands by up to 300% during sodiation, and how it stores sodium is not yet fully understood. Just as important is the solid electrolyte interphase (SEI), a thin layer of electrolyte decomposition products that forms on the anode during the first cycles. It lets ions through while protecting the electrolyte from further breakdown, but in sodium-ion batteries it is more complex and less stable than in lithium-ion batteries. Both processes happen at the molecular scale and on timescales that experiments can hardly resolve.</p>
 
           <h2>Our approach</h2>
-          <p>[How we tackle the problem: which methods, models and tools we use, and how they connect to experiments or applications.]</p>
+          <p>We simulate these processes with reactive molecular dynamics, using the ReaxFF and eReaxFF force fields. Unlike classical force fields, they allow chemical bonds to break and form, and eReaxFF also describes the transfer of electrons that drives the decomposition of the electrolyte. Many of the relevant events, such as a single decomposition reaction, are too rare to be observed in a plain simulation. We therefore combine the simulations with replica exchange transition interface sampling (RETIS), using the open-source software PyRETIS, to obtain reaction mechanisms and rates.</p>
+          <p>We are currently establishing and validating this workflow on lithium-based electrolytes, with the ring-opening of ethylene carbonate as a test case. Building on it, the work continues with:</p>
           <ul>
-            <li>[A specific research question or work package]</li>
-            <li>[A specific research question or work package]</li>
-            <li>[A specific research question or work package]</li>
+            <li><strong>Force field parametrization:</strong> robust ReaxFF and eReaxFF parameters for sodium-based systems with black phosphorus electrodes and organic solvent mixtures.</li>
+            <li><strong>Sodium insertion:</strong> the mechanism by which sodium enters the phosphorene sheets of black phosphorus.</li>
+            <li><strong>SEI formation:</strong> how the solid electrolyte interphase forms at the electrode–electrolyte interface.</li>
           </ul>
 
           <h2>Applications</h2>
-          <p>[Where the results are used, for example in industry, in other research fields or for policy decisions.]</p>
+          <p>Knowing the reaction pathways and rates at the interface helps explain how sodium-ion batteries age, and can guide the choice of electrolyte composition and electrode structure for longer-lasting cells. The rates obtained with RETIS can also serve as input for larger-scale models of SEI growth.</p>
         </article>
 
         <aside class="topic-aside" aria-label="Topic details">
           <div class="aside-block">
             <h2>People</h2>
             <ul class="aside-list">
-              <li><a href="../index.html#group">[Name Surname]</a><span>[Role, e.g. PhD student]</span></li>
-              <li><a href="../index.html#group">[Name Surname]</a><span>[Role, e.g. Postdoc]</span></li>
+              <li><a href="../index.html#group">Jonas Jäger</a><span>PhD student</span></li>
+              <li><a href="../index.html#group">Enrico Riccardi</a><span>Main supervisor</span></li>
             </ul>
           </div>
 
           <div class="aside-block">
             <h2>Methods</h2>
             <ul class="chips">
-              <li>[Method]</li>
-              <li>[Method]</li>
-              <li>[Method]</li>
+              <li>Reactive MD</li>
+              <li>ReaxFF</li>
+              <li>eReaxFF</li>
+              <li>RETIS</li>
+              <li>PyRETIS</li>
             </ul>
           </div>
 
           <div class="aside-block">
-            <h2>Selected publications</h2>
+            <h2>Related publications</h2>
             <ul class="aside-list">
-              <li><a href="#">[Title of the publication]</a><span>[Journal] (Year)</span></li>
+              <li><a href="https://doi.org/10.1002/jcc.27319">PyRETIS 3: Conquering rare and slow events without boundaries</a><span>Journal of Computational Chemistry (2024)</span></li>
             </ul>
-          </div>
-
-          <div class="aside-block">
-            <h2>Collaborators &amp; funding</h2>
-            <p>[Partner institutions, companies or funding agencies.]</p>
           </div>
 
           <div class="aside-block">
             <h2>Thesis topics</h2>
-            <p>Interested in this topic? See our <a href="../index.html#theses">open thesis topics</a>.</p>
+            <p>Open topic: <a href="../Documents/theses/Sodium_Insertion_BP_MD_Study.pdf">Investigation of Sodium Insertion into Black Phosphorus Electrode</a> (PDF). See all <a href="../index.html#theses">open thesis topics</a>.</p>
           </div>
         </aside>
       </div>
