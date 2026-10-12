@@ -463,7 +463,13 @@ a:hover { color: var(--navy); }
 
 .member h4 { font-size: 1.1rem; margin-bottom: .2rem; }
 .role { color: var(--text-muted); font-size: .95rem; margin-bottom: .6rem; }
-.member-email { font-size: .9rem; word-break: break-word; }
+.member-email {
+  margin: 0;
+  font-size: .9rem;
+  user-select: all; /* plain text: one click selects the whole address for copying */
+  -webkit-user-select: all;
+  word-break: break-word;
+}
 
 /* ---------- Publications ---------- */
 
