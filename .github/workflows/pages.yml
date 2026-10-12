@@ -1,0 +1,50 @@
+# Builds the site with an up-to-date publication list (scripts/build_site.py) and publishes it
+# on GitHub Pages. Runs on every push to main, once a day to pick up new publications, and on
+# demand (Actions -> Publish site -> Run workflow). Pull requests only build the site, as a
+# check that the data files and the script still work.
+#
+# Requires Settings -> Pages -> Build and deployment -> Source: "GitHub Actions".
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "23 3 * * *"  # daily at 03:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: python scripts/build_site.py
+      - if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

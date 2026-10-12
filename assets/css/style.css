@@ -516,6 +516,36 @@ a:hover { color: var(--navy); }
 }
 .pub-link:hover { background: var(--tint); border-color: var(--blue); }
 
+.pub-authors strong { font-weight: 700; color: var(--text); } /* group members */
+.pub-more { margin: 2rem 0 0; }
+.pub-updated { margin: 2.5rem 0 0; font-size: .875rem; color: var(--text-muted); }
+
+.profile-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.profile {
+  padding: 1.1rem 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.profile-name { display: block; margin-bottom: .6rem; font-weight: 700; }
+.profile-links { display: flex; flex-wrap: wrap; gap: .4rem; }
+.profile-links a {
+  padding: .2rem .75rem;
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--blue-light);
+  border-radius: 999px;
+}
+.profile-links a:hover { background: var(--tint); border-color: var(--blue); }
+
 /* ---------- Thesis topics ---------- */
 
 .thesis-meta {
