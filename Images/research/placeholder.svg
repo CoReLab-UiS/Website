@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <title>Image placeholder</title>
+  <!-- Default research thumbnail. Replace with a 16:9 image in Images/research/. -->
+  <rect width="640" height="360" fill="#EEF5FC"/>
+  <circle cx="380" cy="140" r="30" fill="#A8CBEA"/>
+  <path d="M200 270 290 160 350 230 400 185 470 270z" fill="#A8CBEA"/>
+</svg>
