@@ -1,0 +1,70 @@
+% CoReLab thesis topic flyer
+%
+% Fill in the fields and replace the text in [square brackets], then compile with pdfLaTeX
+% (on Overleaf: Menu -> Compiler -> pdfLaTeX). Keep the flyer to one page.
+% The layout lives in corelab-thesis.cls; no need to touch it.
+%
+% Watch out: "\item [" and "\\ [" start an optional argument in LaTeX. Start bullet points
+% with text or \textbf{...}, as in the examples below.
+
+\documentclass{corelab-thesis}
+
+\thesistype{[Master thesis]}  % e.g. Master thesis, Bachelor thesis, Bachelor or Master thesis
+\thesistitle{[Thesis title: short and specific, ideally no longer than two lines]}
+
+\begin{document}
+\makeflyerhead
+
+\begin{topic}
+
+[Start with the bigger picture in two or three sentences: what is the problem, and why does
+it matter, for example for energy storage, carbon capture or the energy transition? Write for
+students who are not yet experts in the field.]
+
+[Then describe what the student will actually do in this thesis: which system is studied, which
+methods are used, for example molecular dynamics, density functional theory or machine learning,
+and what question the thesis should answer. Mention what is provided, such as code, data or
+computing time on the cluster.]
+
+\begin{highlight}
+\textbf{[Bonus:]} [Optional. For example: if the results are good, they can become part of a
+scientific publication, with you as a co-author.]
+\end{highlight}
+
+\section*{What you will do}
+\begin{itemize}
+  \item \textbf{[Keyword:]} [One sentence on a task, for example setting up and running simulations.]
+  \item \textbf{[Keyword:]} [One sentence on a task, for example analysing the results with Python.]
+  \item \textbf{[Keyword:]} [One sentence on the supervision, for example weekly meetings.]
+\end{itemize}
+
+\section*{Your profile}
+\begin{itemize}
+  \item \textbf{[Background:]} [Study programme, for example physics, chemistry or engineering.]
+  \item \textbf{[Skills:]} [Required or helpful skills, for example basic programming in Python.]
+  \item \textbf{[Motivation:]} [What matters most, for example curiosity and working independently.]
+\end{itemize}
+
+\section*{Interested?}
+[Send a short email with your CV and transcript to the supervisor. We are happy to discuss the
+topic and adapt it to your interests.]
+
+\sidebar
+
+\infoblock{Supervisor}{%
+  \person{[Name Surname]}{[Position], University of Stavanger}{name.surname@uis.no}}
+
+\infoblock{Co-supervisor}{%
+  \person{[Name Surname]}{[Position], [Institution]}{name.surname@uis.no}}
+
+\infoblock{Thesis type}{[Master thesis, 30 ECTS]}
+
+\infoblock{Start}{[Spring 2027 or by agreement]}
+
+\note{[Questions about the topic? Contact Name Surname.]}
+
+\moretopics
+
+\end{topic}
+
+\end{document}

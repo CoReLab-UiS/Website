@@ -64,6 +64,18 @@ a:hover { color: var(--navy); }
 
 .muted { color: var(--text-muted); }
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .skip-link {
   position: absolute;
   left: 16px;
@@ -356,6 +368,34 @@ a:hover { color: var(--navy); }
 .card h3 { font-size: 1.2rem; color: var(--text); }
 .card p:last-child { margin-bottom: 0; }
 
+/* Linked cards: the title link stretches over the whole card */
+.topic, .thesis { display: flex; flex-direction: column; }
+
+.card-link { color: inherit; text-decoration: none; }
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--radius);
+}
+.card:hover .card-link { color: var(--blue); }
+.card-link:focus-visible { outline: none; }
+.card-link:focus-visible::after { outline: 3px solid var(--blue-sky); outline-offset: -3px; }
+
+.card-more {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+.card-more::after { content: "→"; transition: transform .2s; }
+.card:hover .card-more::after { transform: translateX(3px); }
+
 /* Research topics */
 .topic { overflow: hidden; }
 .topic::before {
@@ -365,8 +405,17 @@ a:hover { color: var(--navy); }
   height: 4px;
   background: linear-gradient(90deg, var(--blue), var(--blue-sky));
 }
+.topic-thumb {
+  width: calc(100% + 3.5rem);
+  max-width: none;
+  margin: -1.75rem -1.75rem 0;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--tint);
+}
 .topic-num {
   display: inline-grid;
+  align-self: flex-start;
   place-items: center;
   width: 2.6rem;
   height: 2.6rem;
@@ -376,6 +425,11 @@ a:hover { color: var(--navy); }
   color: var(--blue);
   background: var(--tint);
   border-radius: 50%;
+}
+.topic-thumb + .topic-num {
+  position: relative;
+  margin-top: -1.3rem;
+  box-shadow: 0 0 0 4px var(--white);
 }
 .topic p { color: var(--text-muted); }
 
@@ -409,7 +463,13 @@ a:hover { color: var(--navy); }
 
 .member h4 { font-size: 1.1rem; margin-bottom: .2rem; }
 .role { color: var(--text-muted); font-size: .95rem; margin-bottom: .6rem; }
-.member-email { font-size: .9rem; word-break: break-word; }
+.member-email {
+  margin: 0;
+  font-size: .9rem;
+  user-select: all; /* plain text: one click selects the whole address for copying */
+  -webkit-user-select: all;
+  word-break: break-word;
+}
 
 /* ---------- Publications ---------- */
 
@@ -492,13 +552,33 @@ a:hover { color: var(--navy); }
 }
 
 .thesis p { color: var(--text-muted); }
-.thesis .thesis-supervisor {
+.thesis-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
   padding-top: 1rem;
-  margin-top: 1rem;
   border-top: 1px solid var(--border);
+}
+.thesis .thesis-supervisor {
+  margin: 0;
   font-size: .9rem;
   color: var(--text);
 }
+
+.pdf-badge {
+  flex-shrink: 0;
+  padding: .2rem .65rem;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--blue);
+  border: 1px solid var(--blue-light);
+  border-radius: 999px;
+  transition: background-color .2s, border-color .2s;
+}
+.card:hover .pdf-badge { background: var(--tint); border-color: var(--blue); }
 
 /* ---------- News ---------- */
 
@@ -565,6 +645,100 @@ address { font-style: normal; color: var(--text-muted); }
   user-select: all;
   -webkit-user-select: all;
   word-break: break-word;
+}
+
+/* ---------- Research topic pages ---------- */
+
+.page-hero {
+  padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(2rem, 5vw, 3rem);
+  background:
+    radial-gradient(circle at 85% 30%, rgba(74, 154, 212, .14), transparent 45%),
+    linear-gradient(180deg, var(--tint) 0%, var(--white) 100%);
+}
+.page-hero h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); max-width: 46rem; }
+.page-hero .lead { max-width: 46rem; margin-bottom: 0; }
+.page-hero + .section { padding-top: clamp(1.5rem, 4vw, 2.5rem); }
+
+.back-link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: 1.5rem;
+  font-size: .9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.back-link::before { content: "←"; }
+.back-link:hover { text-decoration: underline; }
+
+.topic-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  align-items: start;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.prose { max-width: 46rem; }
+.prose h2 { margin: 2.25rem 0 .6rem; font-size: 1.5rem; }
+.prose ul { margin: 0 0 1em; padding-left: 1.25rem; }
+.prose li { margin-bottom: .35rem; }
+.prose li::marker { color: var(--blue-sky); }
+
+.topic-figure { margin: 0; }
+.topic-figure img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--tint);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.topic-figure figcaption { margin-top: .6rem; font-size: .9rem; color: var(--text-muted); }
+
+.topic-aside { display: grid; gap: 1rem; }
+
+.aside-block {
+  padding: 1.25rem 1.4rem;
+  background: var(--tint);
+  border-radius: var(--radius);
+}
+.aside-block h2 {
+  margin-bottom: .7rem;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.aside-block p { margin: 0; font-size: .95rem; color: var(--text-muted); }
+
+.aside-list {
+  display: grid;
+  gap: .7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: .95rem;
+}
+.aside-list a { font-weight: 600; }
+.aside-list span { display: block; font-size: .875rem; color: var(--text-muted); }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.chips li {
+  padding: .2rem .7rem;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--blue);
+  background: var(--white);
+  border-radius: 999px;
 }
 
 /* ---------- Footer ---------- */
@@ -636,6 +810,8 @@ address { font-style: normal; color: var(--text-muted); }
 }
 
 @media (max-width: 920px) {
+  .topic-layout { grid-template-columns: 1fr; }
+
   .footer-logo { width: min(440px, 100%); }
 
   .footer-inner {
