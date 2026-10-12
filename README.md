@@ -80,7 +80,7 @@ Text in `[square brackets]` is placeholder text that still needs real content. R
 
 - **Your photo:** crop it square around your face, scale it to about 400 × 400 px and put it in `Images/members/`. In your member card in `index.html`, change the `src` of the image from `Images/members/placeholder.svg` to your file.
 - **Publication:** copy a `<li class="pub">` in the Publications section, under the right year. Newest year first. Put the DOI address in the `href` of its DOI link.
-- **News:** copy a `<li class="news-item">` and put it at the top of the list, so the newest is first. Set the date in both the `datetime` attribute (`2026-10-12`) and the visible text.
+- **News:** the News section is hidden for now. The comment above it in `index.html` explains how to show it again.
 - **Research topic:** copy `research/topic-template.html` to a new file in `research/`, for example `research/my-topic.html`, and follow the instructions at the top of the file. Then copy a research card in `index.html` and link it to the new page.
 - **Thesis topic:** write the flyer with the LaTeX template on Overleaf, as described in the [template's README](Documents/theses/template/README.md). Put the PDF in `Documents/theses/`, then copy a thesis card in `index.html` and link it to the PDF. When a topic is no longer available, remove its card and its PDF.
 
