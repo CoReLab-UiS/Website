@@ -1,2 +1,6 @@
 # Large media kept locally but not published (18 MB, not used by the site)
 Images/BP_slab_integrity_test.gif
+
+# Built site and Python cache from scripts/build_site.py
+_site/
+__pycache__/

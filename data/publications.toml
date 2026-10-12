@@ -1,0 +1,27 @@
+# Publications added or removed by hand. Everything else comes from the members'
+# ORCID records (see members.toml).
+
+# Publications to leave out, e.g. a paper that was attributed to a member by mistake.
+# One DOI per line, in quotes, followed by a comma.
+exclude = [
+  # "10.1234/example-doi",
+]
+
+# To add a publication that has a DOI, add a block like this. The title, authors and
+# journal are looked up automatically:
+#
+# [[publication]]
+# doi = "10.1234/example-doi"
+
+# To add a publication without a DOI, e.g. a talk, a poster or a report, fill in the
+# details yourself. "month" and "url" are optional:
+#
+# [[publication]]
+# title = "Title of the talk"
+# authors = ["First Author", "Second Author"]
+# venue = "Name of the conference, Stavanger"
+# year = 2025
+# month = 6
+# url = "https://example.org/poster.pdf"
+#
+# Publications added here are always shown, even if they are older than 2024.
