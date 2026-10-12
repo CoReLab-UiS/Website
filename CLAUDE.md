@@ -10,7 +10,7 @@ Live site: https://corelab-uis.github.io/Website/ (repo `CoReLab-UiS/Website`, p
 
 ## Structure
 
-- `index.html` is the main page, with anchored sections (`#research`, `#group`, `#publications`, `#theses`, `#news`, `#contact`). The header nav and footer nav both link to these anchors. If you add, rename, or split out a section, update both navs on every page.
+- `index.html` is the main page, with anchored sections (`#research`, `#group`, `#publications`, `#theses`, `#contact`). The `#news` section and its nav links are commented out on every page for now; the comment above the section says how to restore it. The header nav and footer nav both link to these anchors. If you add, rename, or split out a section, update both navs on every page.
 - `research/` holds one page per research topic, linked from the research cards. `research/topic-template.html` is the copy-me template (it has `noindex` and a how-to comment, which the real pages drop). These pages copy the header and footer of `index.html` with `../` paths and nav links to `../index.html#…`, and mark the Research nav link with `is-active`.
 - `Documents/theses/` holds the thesis topic PDFs that the thesis cards link to. `Documents/theses/template/` is the LaTeX source for them (`main.tex` for content, `corelab-thesis.cls` for the shared layout, pdfLaTeX, meant for Overleaf). `thesis-topic-template.zip` is a zip of that folder for Overleaf upload, and `example-topic.pdf` is the template compiled with its placeholders. After changing the template, rebuild both.
 - `assets/css/style.css` holds the color palette and spacing tokens on `:root`. Use those variables instead of hard-coded colors.
