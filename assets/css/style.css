@@ -718,8 +718,6 @@ address { font-style: normal; color: var(--text-muted); }
 .topic-figure { margin: 0; }
 .topic-figure img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
   background: var(--tint);
   border: 1px solid var(--border);
   border-radius: var(--radius);
