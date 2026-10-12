@@ -1,0 +1,3 @@
+# Pull requests into main need an approval from one of these people
+# (enforced by the "Requirement for pull requests" ruleset).
+* @jonasjaeger-sci @EnricoRiccardi
