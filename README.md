@@ -89,6 +89,7 @@ python3 -m http.server 8000 --directory _site
 Text in `[square brackets]` is placeholder text that still needs real content. Repeated items, such as cards, are copies of each other: to add one, copy an existing one in `index.html` and change its content.
 
 - **Your photo:** crop it square around your face, scale it to about 400 × 400 px and put it in `Images/members/`. In your member card in `index.html`, change the `src` of the image from `Images/members/placeholder.svg` to your file.
+- **Group membership:** the Group section lists Enrico Riccardi's group first, followed by a separate Collaborating groups section. Eva Rauls, Joshua Tse and Konstantinos Alektoridis belong in that collaboration section; Joshua and Konstantinos are supervised by Eva. Keep collaborators out of the member list in `data/members.toml`. Joint publications are included through group members' ORCID records.
 - **Publication:** see [Publications](#publications) below. The list is filled in automatically.
 - **News:** the News section is hidden for now. The comment above it in `index.html` explains how to show it again.
 - **Research topic:** copy `research/topic-template.html` to a new file in `research/`, for example `research/my-topic.html`, and follow the instructions at the top of the file. Then copy a research card in `index.html` and link it to the new page.

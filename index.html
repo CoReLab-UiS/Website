@@ -121,18 +121,35 @@
       <div class="container">
         <header class="section-head">
           <p class="eyebrow">Group</p>
-          <h2>People</h2>
-          <p class="section-intro">The handsome group members</p>
+          <h2>Enrico Riccardi’s group</h2>
+          <p class="section-intro">Researchers and students in Enrico Riccardi’s research group.</p>
         </header>
 
         <!-- To add a photo: put it in Images/members/ and point the img src at it. -->
         <h3 class="subhead">Group leader</h3>
         <div class="member-grid">
-          <article class="member">
-            <img class="avatar" src="Images/members/placeholder.svg" alt="" width="128" height="128">
-            <h4>Enrico Riccardi</h4>
-            <p class="role">Professor Computational Engineering</p>
-            <p class="member-email">enrico.riccardi<wbr>@uis.no</p>
+          <article class="member member-leader">
+            <div>
+              <!-- Portrait from https://www.uis.no/sites/default/files/2023-04/enrico_riccardi.jpeg -->
+              <img class="avatar" src="Images/members/enrico-riccardi.jpg" alt="Enrico Riccardi" width="128" height="128">
+              <h4>Enrico Riccardi</h4>
+              <p class="role">Professor of Computational Engineering</p>
+              <p class="member-email">enrico.riccardi<wbr>@uis.no</p>
+            </div>
+            <div class="member-bio">
+              <!-- Research summary sources: https://www.uis.no/nb/profile/enrico-riccardi
+                   https://doi.org/10.1002/jcc.27319 (PyRETIS 3)
+                   https://doi.org/10.1021/acs.jctc.1c00458 (Chemistrees)
+                   https://doi.org/10.1016/j.bpj.2025.04.020 (biomolecular kinetics) -->
+              <p>Enrico develops molecular simulation, rare-event sampling and machine-learning methods to understand complex physical and biological systems. He co-develops <a href="https://www.pyretis.org/">PyRETIS</a> and combines path sampling with data analysis to uncover reaction mechanisms and predict the rates of processes that are difficult to observe in conventional simulations.</p>
+              <p>His work spans molecular transport, interfacial phenomena and biomolecular kinetics, with current applications in CO₂ adsorption, sodium-ion battery materials and data-driven decision support.</p>
+              <div class="profile-links">
+                <a href="https://www.uis.no/nb/profile/enrico-riccardi">UiS profile</a>
+                <a href="https://scholar.google.com/citations?user=_jjX8OcAAAAJ&amp;hl=en">Google Scholar</a>
+                <a href="https://orcid.org/0000-0003-1890-7113">ORCID</a>
+                <a href="https://www.researchgate.net/profile/Enrico-Riccardi">ResearchGate</a>
+              </div>
+            </div>
           </article>
         </div>
 
@@ -143,12 +160,6 @@
             <h4>Shipra Singh</h4>
             <p class="role">Optimization Oil Field Flow</p>
             <p class="member-email">shipra.singh<wbr>@uis.no</p>
-          </article>
-          <article class="member">
-            <img class="avatar" src="Images/members/placeholder.svg" alt="" width="128" height="128">
-            <h4>Joshua Tse</h4>
-            <p class="role">Nanomaterials</p>
-            <p class="member-email">joshua.s.tse<wbr>@uis.no</p>
           </article>
         </div>
 
@@ -173,12 +184,6 @@
             <p class="member-email">bahar.khanshaghaghi<wbr>@uis.no</p>
           </article>
           <article class="member">
-            <img class="avatar" src="Images/members/placeholder.svg" alt="" width="128" height="128">
-            <h4>Konstantinos Alektoridis</h4>
-            <p class="role">CO2 Adsorption</p>
-            <p class="member-email">konstantinos.alektoridis<wbr>@uis.no</p>
-          </article>
-          <article class="member">
             <img class="avatar" src="Images/members/IMG_Jonas.jpg" alt="" width="128" height="128">
             <h4>Jonas Jäger</h4>
             <p class="role">Battery Materials</p>
@@ -191,6 +196,33 @@
             <p class="member-email">macdonald.c.sunday<wbr>@uis.no</p>
           </article>
         </div>
+
+        <section class="collaborating-groups" aria-labelledby="collaborating-groups-heading">
+          <h3 id="collaborating-groups-heading">Collaborating groups</h3>
+          <p class="section-intro">Eva Rauls leads a separate research group at UiS and collaborates with Enrico Riccardi’s group. Joshua Tse and Konstantinos Alektoridis belong to Eva’s group.</p>
+          <div class="member-grid">
+            <article class="member">
+              <img class="avatar" src="Images/members/placeholder.svg" alt="" width="128" height="128">
+              <h4>Eva Rauls</h4>
+              <p class="role">Collaborating group leader</p>
+            </article>
+            <article class="member">
+              <img class="avatar" src="Images/members/placeholder.svg" alt="" width="128" height="128">
+              <h4>Joshua Tse</h4>
+              <p class="role">Nanomaterials</p>
+              <p class="member-supervisor">Supervisor: Eva Rauls</p>
+              <p class="member-email">joshua.s.tse<wbr>@uis.no</p>
+            </article>
+            <article class="member">
+              <img class="avatar" src="Images/members/placeholder.svg" alt="" width="128" height="128">
+              <h4>Konstantinos Alektoridis</h4>
+              <p class="role">PhD student · CO₂ adsorption</p>
+              <p class="member-supervisor">Supervisor: Eva Rauls</p>
+              <p class="member-email">konstantinos.alektoridis<wbr>@uis.no</p>
+              <p class="member-orcid"><a href="https://orcid.org/0009-0009-2684-1581">ORCID</a></p>
+            </article>
+          </div>
+        </section>
       </div>
     </section>
 
