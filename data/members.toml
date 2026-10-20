@@ -1,4 +1,5 @@
-# Members whose publications appear on the website.
+# Members of Enrico Riccardi's group whose publications appear on the website.
+# Collaborating groups are listed separately in index.html, not as members here.
 #
 # The publication list is built from each member's ORCID record, from 2024 on.
 # To add a member, copy a [[member]] block and fill it in. "orcid" is the ORCID iD,
@@ -8,18 +9,12 @@
 [[member]]
 name = "Enrico Riccardi"
 orcid = "0000-0003-1890-7113"
-scholar = ""
-researchgate = ""
+scholar = "https://scholar.google.com/citations?user=_jjX8OcAAAAJ&hl=en"
+researchgate = "https://www.researchgate.net/profile/Enrico-Riccardi"
 
 [[member]]
 name = "Auref Rostamian"
 orcid = "0000-0002-9624-3095"
-scholar = ""
-researchgate = ""
-
-[[member]]
-name = "Konstantinos Alektoridis"
-orcid = "0009-0009-2684-1581"
 scholar = ""
 researchgate = ""
 

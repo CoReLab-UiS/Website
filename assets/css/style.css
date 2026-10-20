@@ -471,6 +471,30 @@ a:hover { color: var(--navy); }
   word-break: break-word;
 }
 
+.member-leader {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+.member-bio { text-align: left; }
+.member-bio p { color: var(--text-muted); }
+
+.collaborating-groups {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.member-supervisor { color: var(--text-muted); font-size: .9rem; margin-bottom: .6rem; }
+.member-orcid { font-size: .9rem; margin: .6rem 0 0; }
+
+@media (max-width: 640px) {
+  .member-leader { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
 /* ---------- Publications ---------- */
 
 .pub-year {
