@@ -313,6 +313,7 @@ a:hover { color: var(--navy); }
 
 .section-head { max-width: 46rem; margin-bottom: 2.5rem; }
 .section-head h2 { font-size: clamp(1.9rem, 3.5vw, 2.5rem); }
+.section-head h3 { font-size: clamp(1.5rem, 2.5vw, 1.9rem); color: var(--navy); letter-spacing: -.02em; }
 .section-intro { color: var(--text-muted); font-size: 1.1rem; }
 
 .eyebrow {
@@ -489,7 +490,7 @@ a:hover { color: var(--navy); }
 }
 
 .member-supervisor { color: var(--text-muted); font-size: .9rem; margin-bottom: .6rem; }
-.member-orcid { font-size: .9rem; margin: .6rem 0 0; }
+.member > .profile-links { justify-content: center; margin-top: .8rem; }
 
 @media (max-width: 640px) {
   .member-leader { grid-template-columns: 1fr; gap: 1.5rem; }
