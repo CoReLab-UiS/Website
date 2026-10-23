@@ -89,7 +89,8 @@ python3 -m http.server 8000 --directory _site
 Text in `[square brackets]` is placeholder text that still needs real content. Repeated items, such as cards, are copies of each other: to add one, copy an existing one in `index.html` and change its content.
 
 - **Your photo:** crop it square around your face, scale it to about 400 × 400 px and put it in `Images/members/`. In your member card in `index.html`, change the `src` of the image from `Images/members/placeholder.svg` to your file.
-- **Group membership:** the Group section lists Enrico Riccardi's group first, followed by a separate Collaborating groups section. Eva Rauls, Joshua Tse and Konstantinos Alektoridis belong in that collaboration section; Joshua and Konstantinos are supervised by Eva. Keep collaborators out of the member list in `data/members.toml`. Joint publications are included through group members' ORCID records.
+- **Group membership:** the Group section has two parts. Enrico Riccardi's group comes first, split into group leader, researchers and postdocs, and PhD students. Below it, **Collaborating Groups** lists people from other research groups that CoReLab works with: each collaborating group leader, followed by the postdocs and students of their group. Add a new card to the part the person belongs to. On the card of a postdoc or student in a collaborating group, add a `Supervisor:` line with their group leader's name, as on the existing cards. Only members of Enrico's group go in `data/members.toml`; joint publications with collaborators are included through the group members' ORCID records.
+- **Profile links:** to link your UiS profile, ORCID, Google Scholar or ResearchGate from your member card, copy the `profile-links` block from another card and change the links.
 - **Publication:** see [Publications](#publications) below. The list is filled in automatically.
 - **News:** the News section is hidden for now. The comment above it in `index.html` explains how to show it again.
 - **Research topic:** copy `research/topic-template.html` to a new file in `research/`, for example `research/my-topic.html`, and follow the instructions at the top of the file. Then copy a research card in `index.html` and link it to the new page.
@@ -99,7 +100,7 @@ Text in `[square brackets]` is placeholder text that still needs real content. R
 
 The publication lists are built automatically from the members' ORCID records, with publications from 2024 on. The main page shows the latest five, and `publications.html` shows all of them. Don't edit the lists in these pages by hand: they're overwritten on every update.
 
-- **Add a member:** add a block with their name and ORCID iD to `data/members.toml`. Links to their Google Scholar and ResearchGate profiles are optional and appear on the publications page.
+- **Add a member:** add a block with their name and ORCID iD to `data/members.toml`. This is only for members of Enrico's group, not for collaborators. Links to their Google Scholar and ResearchGate profiles are optional and appear on the publications page.
 - **Keep your ORCID record up to date.** ORCID can add new papers automatically: in your ORCID account, go to **Works → Add → Search & link → Crossref Metadata Search** and allow automatic updates. Google Scholar and ResearchGate can't be read automatically, so they're only shown as links.
 - **Add a publication by hand,** for example one that's missing from ORCID, or a talk or poster without a DOI: add it to `data/publications.toml`. For a publication with a DOI, the DOI is enough. Publications added there are shown even if they're older than 2024.
 - **Remove a publication,** for example one attributed to a member by mistake: add its DOI to the `exclude` list in `data/publications.toml`.
