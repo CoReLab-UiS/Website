@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Decision making analysis in oil field management – CoReLab | University of Stavanger</title>
-  <meta name="description" content="[One sentence summarising the research topic.]">
+  <title>Conceptual subsurface model selection with posterior predictive criteria – CoReLab | University of Stavanger</title>
+  <meta name="description" content="We test whether production data are informative enough to tell competing geological models of a reservoir apart, and we do it fast enough to be useful in practice.">
   <link rel="icon" type="image/svg+xml" href="../Logos/corelab_mark.svg">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/main.js" defer></script>
@@ -53,8 +53,8 @@
       <div class="container">
         <a class="back-link" href="../index.html#research">All research topics</a>
         <p class="eyebrow">Research topic 03</p>
-        <h1>Decision making analysis in oil field management</h1>
-        <p class="lead">[One or two sentences summarising the topic: what we study and why it matters.]</p>
+        <h1>Conceptual subsurface model selection with posterior predictive criteria</h1>
+        <p class="lead">Nobody can see inside a reservoir, so engineers often work with several plausible geological models of the same field. We develop fast methods to test which of these models the production data really support, and whether the data can tell them apart at all, so that field decisions rest on evidence rather than on a single guess.</p>
       </div>
     </section>
 
@@ -62,54 +62,68 @@
     <section class="section">
       <div class="container topic-layout">
         <article class="prose">
+
           <figure class="topic-figure">
-            <img src="../Images/research/placeholder.svg" alt="[Short description of the image]" width="640" height="360">
-            <figcaption>[Figure caption: what the image shows.]</figcaption>
+            <img src="../Images/research/conceptual-models.gif" alt="An animated 3D block of a synthetic reservoir. Each of its four faces shows a different geological concept: high-permeability streaks running at 0, 45, 90 and 135 degrees." loading="lazy">
+            <figcaption>A synthetic reservoir model with four different geological concepts. Each face shows high-permeability streaks in a different direction, and all four concepts can reproduce the same production history at the wells.</figcaption>
           </figure>
 
           <h2>Background</h2>
-          <p>[The scientific or societal context of the topic. Which open questions or challenges motivate this research?]</p>
+          <p>Decisions in an oil or gas field, such as where to drill, how much water to inject or what production to expect, rely on a computer model of the reservoir. But the rock lies kilometres below the surface and is sampled only where wells are drilled. Geologists can therefore propose several different but equally reasonable interpretations, called <em>conceptual models</em>: channels may run in one direction or another, and a fault may or may not seal.</p>
+          <p>As the field produces, measured rates and pressures are used to update the models, a process known as history matching. The difficulty is that very different models can match the same measurements equally well. A good fit is evidence, but not proof. This raises a practical question: are the production data informative enough to discriminate between the conceptual models, or is that simply not possible with the data we have?</p>
 
           <h2>Our approach</h2>
-          <p>[How we tackle the problem: which methods, models and tools we use, and how they connect to experiments or applications.]</p>
+          <p>We combine fast data assimilation with statistical model comparison. Instead of re-running an expensive flow simulator for every update, we use <em>data-space inversion</em>, which updates the predicted production data directly. A neural-network autoencoder compresses each production curve into a few numbers that are easier to handle statistically. Together, these make it possible to condition and compare many geological concepts on standard computing hardware, in hours rather than weeks or months.</p>
           <ul>
-            <li>[A specific research question or work package]</li>
-            <li>[A specific research question or work package]</li>
-            <li>[A specific research question or work package]</li>
+            <li><strong>Which model predicts best?</strong> Posterior predictive criteria rank the conditioned models by how well they predict data they have not seen (leave-one-out cross-validation), and Bayesian stacking combines them with weights instead of betting on a single model.</li>
+            <li><strong>Can the data tell them apart?</strong> Before any updating, a separability diagnostic based on the Wasserstein distance measures how different the models' predicted responses are, and shows in advance whether a confident ranking is possible.</li>
+            <li><strong>How much time does it save?</strong> A full model comparison that would need about two weeks (2D case) to two and a half months (3D Drogon field) of simulation was completed in a few hours.</li>
           </ul>
 
-          <h2>Applications</h2>
-          <p>[Where the results are used, for example in industry, in other research fields or for policy decisions.]</p>
+          <h2>Results and applications</h2>
+          <p>In a blind benchmark, where the true model was kept hidden until the end, the method identified the correct geological concept. On the Drogon field, a realistic 3D benchmark released by Equinor, the diagnostic correctly warned beforehand that ten alternative models could not be told apart with the available data. In that situation the right step is to collect different data, such as a longer production history, other well controls or new types of measurement. Because the diagnostic is cheap, such options can be screened before money is spent on acquiring them.</p>
+          <p>The methods support reservoir management and forecasting with honest uncertainty, and apply equally to other subsurface problems such as CO<sub>2</sub> storage.</p>
         </article>
 
         <aside class="topic-aside" aria-label="Topic details">
           <div class="aside-block">
             <h2>People</h2>
             <ul class="aside-list">
-              <li><a href="../index.html#group">[Name Surname]</a><span>[Role, e.g. PhD student]</span></li>
-              <li><a href="../index.html#group">[Name Surname]</a><span>[Role, e.g. Postdoc]</span></li>
+              <li><a href="../index.html#group">Auref Rostamian</a><span>PhD candidate</span></li>
+              <li><a href="../index.html#group">Enrico Riccardi</a><span>Supervisor</span></li>
+              <li><a href="https://www.linkedin.com/in/remus-hanea-139a695/" rel="noopener">Remus G. Hanea</a><span>Co-advisor</span></li>
+              <li><a href="https://www.linkedin.com/in/alexandre-emerick-b9b66020b/" rel="noopener">Alexandre A. Emerick</a><span>Co-advisor</span></li>
+              <li><a href="https://www.linkedin.com/in/reidar-b-bratvold-a657a12/" rel="noopener">Reidar B. Bratvold</a><span>Former supervisor</span></li>
             </ul>
           </div>
 
           <div class="aside-block">
             <h2>Methods</h2>
             <ul class="chips">
-              <li>[Method]</li>
-              <li>[Method]</li>
-              <li>[Method]</li>
+              <li>Data-space inversion</li>
+              <li>Ensemble smoother (ES-MDA)</li>
+              <li>Recurrent autoencoders</li>
+              <li>Leave-one-out cross-validation</li>
+              <li>Bayesian stacking</li>
+              <li>Wasserstein distance</li>
             </ul>
           </div>
 
           <div class="aside-block">
             <h2>Selected publications</h2>
             <ul class="aside-list">
-              <li><a href="#">[Title of the publication]</a><span>[Journal] (Year)</span></li>
+              <li><a href="#">Are production data informative enough to discriminate conceptual reservoir models? A diagnostic framework</a><span>Rostamian, Hanea, Emerick, Riccardi, Bratvold (2026)</span></li>
             </ul>
           </div>
 
           <div class="aside-block">
+            <h2>Code</h2>
+            <p>The DSI–ESMDA workflow is openly available on <a href="https://github.com/Aurefpe/dsi-esmda" rel="noopener">GitHub</a>.</p>
+          </div>
+
+          <div class="aside-block">
             <h2>Collaborators &amp; funding</h2>
-            <p>[Partner institutions, companies or funding agencies.]</p>
+            <p>Funded through the NORCE research project REMEDY (Reduced Emissions and Improved Energy Efficiency on the NCS), with industry partners Aker BP, Equinor and Harbour Energy, and by the Research Council of Norway (PETROMAKS2, project 336240). TNO supported the data acquisition.</p>
           </div>
 
           <div class="aside-block">
