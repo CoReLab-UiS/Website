@@ -25,9 +25,14 @@ For a typo, your role or a short text, you don't need Git:
 1. Open the file on GitHub, for example `index.html`, and click the pencil icon (**Edit this file**).
 2. Make your change.
 3. Click **Commit changes…**, write a short description, choose **Create a new branch for this commit and start a pull request**, and click **Propose changes**.
-4. Click **Create pull request**.
+4. On the next page, click **Create pull request**. Until you do, your change sits on a branch that nobody reviews.
 
 To add a file, such as your photo, open the folder on GitHub and choose **Add file → Upload files**. Then continue as in step 3.
+
+Two things that often go wrong in the browser:
+
+- **Don't click Close pull request.** It doesn't submit anything. It withdraws the pull request, and the change never goes live. Once you've created the pull request, you're done: it stays open until a reviewer merges it. If you closed one by mistake, click **Reopen pull request** on the same page.
+- **To change an open pull request, edit on its branch, not on `main`.** The branch name is shown at the top of the pull request, for example `jane-patch-1`. On the repository's start page, pick that branch in the branch menu above the file list, then edit or upload as above and choose **Commit directly to the `jane-patch-1` branch**. If you edit on `main` instead, GitHub creates a second branch and pull request.
 
 ### Larger changes on your computer
 
@@ -63,7 +68,7 @@ Then open the repository on GitHub. A banner offers **Compare & pull request**: 
 - GitHub also checks automatically that the site still builds. The result is shown at the bottom of the pull request; if the check fails, click **Details** to see the error message.
 - To make changes, edit the files on the same branch, then `git add`, `git commit` and `git push` again. The pull request updates itself.
 - Once it's approved, the reviewer merges it, or you click **Merge pull request** yourself. The change is live a minute or two later.
-- Afterwards, click **Delete branch** on the pull request page and update your copy with `git switch main` and `git pull`.
+- GitHub deletes the branch automatically after merging. If you worked on your computer, update your copy with `git switch main` and `git pull`.
 
 ## Preview locally
 
